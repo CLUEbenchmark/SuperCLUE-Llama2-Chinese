@@ -71,7 +71,6 @@ Facebook母公司Meta发布了开源可商用的大模型Llama2，该开源模�
 
 ## 延伸阅读
 1. <a href='https://arxiv.org/abs/2307.15020'>SuperCLUE</a>: A Comprehensive Chinese Large Language Model Benchmark，
-https://arxiv.org/abs/2307.15020
-2. <a href='https://www.cluebenchmarks.com/superclue_open.html'>SuperCLUE-OPEN基准：中文通用大模型开放式与多轮测评基准（7月）</a>, https://www.cluebenchmarks.com/superclue_open.html
+2. <a href='https://www.cluebenchmarks.com/superclue_open.html'>SuperCLUE-OPEN基准：中文通用大模型开放式与多轮测评基准（7月）</a> 
 3. LMSYS文章：Chatbot Arena Leaderboard Week 8: Introducing MT-Bench and Vicuna-33B
 4. 相关项目：Alpaca_Eval: A validated automatic evaluator for instruction-following language models
