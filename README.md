@@ -12,3 +12,18 @@ Facebook母公司Meta发布了开源可商用的大模型Llama2，该开源模�
 
 
 <img src="https://github.com/CLUEbenchmark/Llama2-Chinese/blob/main/resources/img/llama2_chinese_v3.jpg"  width="90%" height="90%"></img>
+
+
+## SuperCLUE开放式多轮测评-Llama2中文开源模型排行榜
+| 序号 | 模型 | 机构 | OPEN分数 | 描述 |
+|-|-|-|-|-|  
+| 1 | GPT-4 | OpenAI | 94.64 | OpenAI发布的公认最强模型 |
+| 2 | Claude-instant-v1 | Authropic | 69.51 | OpenAI竞品的基础版本 |
+| 3 | Baichuan-13B-chat | 百川智能 | 65.28 | 继7B之后的更大持续的模型,在高质量的语料上训练了 1.4 万亿 tokens,使用 ALiBi 位置编码,上下文窗口长度为 4096 |
+| 4 | ChatGLM2-6B | 清华&智谱AI | 36.50 | 第二代版本, 1.4T 中英标识符的预训练与人类偏好对齐训练, 结合FlashAttention 在8K上训练,更高效的推理 |
+| 5 | openbuddy-llama2-13b | OpenBuddy | 35.12 | 多语言对话型人工智能,支持中文、英文、日文、韩文、法文、德文以及更多语言;增强词汇量和对常见CJK字符的支持。 |
+| 6 | Llama-2-13B-chat | Meta | 27.05 | Meta发布的原版Llama-2,主要支持英文,中文支持较弱 |  
+| 7 | Llama2-Chinese-13b-Chat | Llama2中文社区(FlagAlpha) | 26.51 | 采用中文指令集,对Llama-2进行LoRA微调,使其具备较强的中文对话能力。 |
+| 8 | firefly_llama2_13b | YeungNLP | 12.54 | 采用百万指令数据,对Llama-2进行QLoRA微调 |
+| 9 | Llama2-Chinese-7b-Chat | Llama2中文社区(FlagAlpha) | 12.50 | 采用中文指令集,对Llama-2进行LoRA微调,使其具备较强的中文对话能力。 |
+| 10 | yayi-13b-llama2 | 中科闻歌(wenge-research,中科院自动化所孵化) | 8.78 | 在百万级人工构造的高质量领域数据上进行指令微调得到,训练数据覆盖媒体宣传、舆情分析、公共安全、金融风控、城市治理等五大领域,上百种自然语言指令任务。 |
