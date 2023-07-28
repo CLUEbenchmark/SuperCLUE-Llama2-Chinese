@@ -49,7 +49,7 @@ Facebook母公司Meta发布了开源可商用的大模型Llama2，该开源模�
 
 在SuperCLUE开放式多轮测评-十大能力成绩评估中，我们发现Llama2中文模型在多数任务上效果总体效果还比较一般，多数能力的平均分离及格线都有比较大的差距。
 
-## 定量分析
+## 定性分析
 ### 1）基础能力的例子
 #### 生成与创作
   生成与创作，比如给定一个话题、一个写作任务来创作一段文字对于LLMs而言是相对比较容易的任务。
@@ -59,7 +59,8 @@ Facebook母公司Meta发布了开源可商用的大模型Llama2，该开源模�
 
 
 #### 语义理解与抽取
-  openbuddy能精确地理解用户的意图完成任务，但是从返回的内容本身以及格式上来说openbuddy输出的内容不如百川的好。
+  openbuddy能精确地理解用户的意图完成任务，但是从返回的内容本身以及格式上来说openbuddy输出的内容不如百川的好。<br/>
+
 <img src="https://github.com/CLUEbenchmark/Llama2-Chinese/blob/main/resources/img/llama2_2.png"  width="90%" height="90%"></img>
 
 ### 2）上下文能力的例子
