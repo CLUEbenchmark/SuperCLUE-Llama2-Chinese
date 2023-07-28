@@ -46,3 +46,32 @@ Facebook母公司Meta发布了开源可商用的大模型Llama2，该开源模�
 | 6  | yayi_13b_llama2 | 8.78 | 16.67 | 0.00 | 10.00 | 3.33 | 3.45 | 3.33 | 10.34 | 20.00 | 20.00 | 0.00 |
    
     胜和率，是模型的胜率加上平局率之和，即(win+tie)/(win+tie+loss)*100。win，即胜，tie即平，loss即负。
+
+## 当前Llama2开源中文版技术路线
+1. 指令微调：根据已经开源的版本看，目前主要是基于Llama2进行指令微调。
+2. 高效微调：目前普遍采用高效微调技术（如LoRA/QLoRA） 来微调大模型（如FlagAlpha, firefly_llama2_13b等）。
+   这类技术上具备在单张GPU上微调大型语言模型的能力。LoRa为LLM的每一层添加了少量的可训练参数（适配器），并冻结了所有原始参数。
+   这样对于微调，只需要更新适配器权重，这可以显著减少内存占用；QLoRA通过更高的量化（4-bit）和更多的可微调参数等进行改进。
+3. 中文词汇表：部分模型（如openbuddy-llama2-13b）改进或扩充词汇表，实现中文上更好的支持。
+4. 微调数据：使用百万微调数据进行微调，开源或构造特定领域数据（yayi）
+
+## 初步结论
+1. 基于SuperCLUE的OPEN基准，当前处于Llama2中文版的初级阶段，总体上模型质量参差不齐。
+  在本次评估的5个模型中，在OPEN基准上有3个模型效果远远小于Llama2原版的效果（10多分 vs 27分）
+2. 有部分模型取得不错的效果（如OpenBuddy），效果与ChatGLM2-6B接近（35.12 VS 36.50）；但与Baichuan-13B-Chat相比还有明显差距（35.12 VS 65.18）
+3. 当前开源的Llama2中文模型与GPT3.5相比，差距巨大。最好模型与GPT3.5对战的胜率最高仅为12%，要达到接近的效果（如33%），还有很长的路要走。
+4. 任务维度上，一些模型（openbuddy，FlagAlpha）具有还不错的生成与创作能力；并且在多种任务上都可以生成较长的回复，有些结构比较完整。
+
+## 评估的不足与局限性
+1. 它是一个自动化的模型能力测评，没有人类的主观因素；虽然加州伯克利大学/斯坦福大学的相关研究表明（见延伸阅读），
+   自动化测评具有与人类评估的高度一致性（相关系数0.8-0.9），但进一步的分析还可以包括人类对模型的评估；
+2. 评估的能力主要是基于SuperCLUE的十大基础能力，即使具有较高的代表性，但并不能保证覆盖了所有能力的评估。
+3. 当前各个大模型厂商在快速迭代中，虽然我们报告的数字是最新的（7月中旬），但各个厂商的快速迭代可能会导致后续相对表现的进一步变化。
+4. 在本文中，我们没有测试一些其他但有用的维度。比如，我们没有测试模型的性能问题（速度），也还没有测试模型的支持的有效的输入长度。后续可能会进行专门的测试。
+
+## 延伸阅读
+1. <a href='https://arxiv.org/abs/2307.15020'>SuperCLUE</a>: A Comprehensive Chinese Large Language Model Benchmark，
+https://arxiv.org/abs/2307.15020
+2. <a href='https://www.cluebenchmarks.com/superclue_open.html'>SuperCLUE-OPEN基准：中文通用大模型开放式与多轮测评基准（7月）</a>, https://www.cluebenchmarks.com/superclue_open.html
+3. LMSYS文章：Chatbot Arena Leaderboard Week 8: Introducing MT-Bench and Vicuna-33B
+4. 相关项目：Alpaca_Eval: A validated automatic evaluator for instruction-following language models
