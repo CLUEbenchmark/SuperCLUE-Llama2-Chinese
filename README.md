@@ -55,28 +55,36 @@ Facebook母公司Meta发布了开源可商用的大模型Llama2，该开源模�
   生成与创作，比如给定一个话题、一个写作任务来创作一段文字对于LLMs而言是相对比较容易的任务。
   我们发现作为中文llama-2微调模型中的佼佼者， OpenBuddy生成的内容在结构性、丰富度上距离百川13b仍有不小的差距，并且openbuddy的形容过于宽泛而缺少具体例子，
   有些词汇使用的也不太合适，比如用敏锐描述幽默感便有些不恰当。
-[图片]
+<img src="https://github.com/CLUEbenchmark/Llama2-Chinese/blob/main/resources/img/llama2_1.png"  width="90%" height="90%"></img>
+
 
 #### 语义理解与抽取
   openbuddy能精确地理解用户的意图完成任务，但是从返回的内容本身以及格式上来说openbuddy输出的内容不如百川的好。
-[图片]
+<img src="https://github.com/CLUEbenchmark/Llama2-Chinese/blob/main/resources/img/llama2_2.png"  width="90%" height="90%"></img>
+
 ### 2）上下文能力的例子
   在两轮对话的测试中，两个模型都能正确的完成任务。
   在我们给出的示例中，openbuddy在第一轮的回答中给出的建议不如百川13b给出的建议充分，但两者的回答结构都非常优秀，让用户能有不错的体验。在第二轮对话中，虽然openbuddy修改了自己的回答，但是相比百川，其修改的幅度较小，很大比例是照搬上一轮的回答。
-[图片]
-[图片]
+<img src="https://github.com/CLUEbenchmark/Llama2-Chinese/blob/main/resources/img/llama2_3.png"  width="90%" height="90%"></img>
+
+<img src="https://github.com/CLUEbenchmark/Llama2-Chinese/blob/main/resources/img/llama2_4.png"  width="90%" height="90%"></img>
+
 ### 3）复杂任务（逻辑推理、代码生成、思维链路等）的例子
 #### 代码生成
   代码，属于百川和openbuddy都不擅长的领域。和我们在百川测评推文中提到的一样，在我们给出的示例中，百川虽然能完成任务，但是给出的代码完全没考虑到非整数元素不需要逆转。  至于openbuddy，其虽然理解了用户仅将整数逆转的需求，但是给出的代码仅仅是把原列表中的整数按顺序放入新列表返回，并且给出的示例也和其给出的代码的实际效果不一致。
-[图片]
+<img src="https://github.com/CLUEbenchmark/Llama2-Chinese/blob/main/resources/img/llama2_5.png"  width="90%" height="90%"></img>
+
   回顾我们上一篇的推文，可以发现Llama-2-13B-chat本身也会出现给出的代码与给出的代码用例不一致的情况。
-[图片]
+<img src="https://github.com/CLUEbenchmark/Llama2-Chinese/blob/main/resources/img/llama2_6.png"  width="90%" height="90%"></img>
+
 #### 逻辑推理
   逻辑推理，同样属于百川和openbuddy都不擅长的领域。两者对问题的回答都是错误的。其中openbuddy的回答更显混乱一些，不仅没能正确理解问题，而且出现了许多非常初等的计算错误，比如4-2-4=0这种错误回答。两个模型都在回答时搞错了卡牌的总数，而我们在问题中是明确指出总共有十张卡牌的。
 正确答案是4张绿色背景卡牌
-[图片]
+<img src="https://github.com/CLUEbenchmark/Llama2-Chinese/blob/main/resources/img/llama2_7.png"  width="90%" height="90%"></img>
+
   回顾Llama-2-13B-chat可以看到，Llama-2-13B-chat同样无法给出正确答案。
-[图片]
+<img src="https://github.com/CLUEbenchmark/Llama2-Chinese/blob/main/resources/img/llama2_8.png"  width="90%" height="90%"></img>
+
 
 ## 当前Llama2开源中文版如何实现的？
 1. 指令微调：根据已经开源的版本看，目前主要是基于Llama2进行指令微调。
